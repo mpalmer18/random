@@ -1,12 +1,16 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_if" id="43" inline="false" x="1" y="27">
-    <value name="IF0">
+  <block type="oled_drawnumber" id="95" inline="true" x="-1" y="-7">
+    <value name="NUMBER">
       <block type="sensor_object" id="50">
         <field name="OBJECT">LEFTFRONT</field>
       </block>
     </value>
-    <statement name="DO0">
-      <block type="movement_right" id="70"></block>
-    </statement>
+    <next>
+      <block type="controls_if" id="43" inline="false">
+        <statement name="DO0">
+          <block type="movement_right" id="70"></block>
+        </statement>
+      </block>
+    </next>
   </block>
 </xml>
