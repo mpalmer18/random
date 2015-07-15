@@ -13,7 +13,13 @@
           </block>
         </value>
         <statement name="DO0">
-          <block type="movement_right" id="165"></block>
+          <block type="movement_rightmotor" id="176" inline="true">
+            <value name="MOVRIGHT">
+              <block type="math_number" id="183">
+                <field name="NUM">3</field>
+              </block>
+            </value>
+          </block>
         </statement>
       </block>
     </next>
