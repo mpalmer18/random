@@ -22,16 +22,16 @@
             <next>
               <block type="controls_if" id="3" inline="false">
                 <value name="IF0">
-                  <block type="math_shift" id="57" inline="true">
-                    <field name="OP">LEFT</field>
+                  <block type="logic_compare" id="99" inline="true">
+                    <field name="OP">GT</field>
                     <value name="A">
-                      <block type="sensor_object" id="78">
+                      <block type="sensor_object" id="115">
                         <field name="OBJECT">LEFTFRONT</field>
                       </block>
                     </value>
                     <value name="B">
-                      <block type="math_number" id="85">
-                        <field name="NUM">20</field>
+                      <block type="math_number" id="122">
+                        <field name="NUM">25</field>
                       </block>
                     </value>
                   </block>
