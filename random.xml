@@ -6,7 +6,7 @@
       </block>
     </value>
     <statement name="DO0">
-      <block type="movement_stutter" id="60"></block>
+      <block type="movement_right" id="70"></block>
     </statement>
   </block>
 </xml>
