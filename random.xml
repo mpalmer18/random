@@ -1,5 +1,5 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="oled_setcursor" id="30" inline="true" x="1" y="-64">
+  <block type="oled_setcursor" id="30" inline="true" x="54" y="-10">
     <value name="STARTX">
       <block type="math_number" id="37">
         <field name="NUM">0</field>
@@ -22,8 +22,18 @@
             <next>
               <block type="controls_if" id="3" inline="false">
                 <value name="IF0">
-                  <block type="sensor_object" id="4">
-                    <field name="OBJECT">REAR</field>
+                  <block type="math_shift" id="57" inline="true">
+                    <field name="OP">LEFT</field>
+                    <value name="A">
+                      <block type="sensor_object" id="78">
+                        <field name="OBJECT">LEFTFRONT</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="85">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
                   </block>
                 </value>
                 <statement name="DO0">
