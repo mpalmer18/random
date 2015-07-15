@@ -1,5 +1,5 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="movement_reverse" id="142" x="88" y="-22">
+  <block type="movement_reverse" id="142" x="67" y="29">
     <next>
       <block type="oled_setcursor" id="30" inline="true">
         <value name="STARTX">
@@ -13,8 +13,24 @@
           </block>
         </value>
         <next>
-          <block type="oled_cleardisplay" id="21">
-            <next>
+          <block type="controls_whileUntil" id="149" inline="false">
+            <field name="MODE">WHILE</field>
+            <value name="NUMBER">
+              <block type="logic_compare" id="99" inline="true">
+                <field name="OP">GT</field>
+                <value name="A">
+                  <block type="sensor_object" id="115">
+                    <field name="OBJECT">REAR</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="122">
+                    <field name="NUM">20</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO">
               <block type="oled_drawnumber" id="1" inline="true">
                 <value name="NUMBER">
                   <block type="sensor_object" id="2">
@@ -22,36 +38,19 @@
                   </block>
                 </value>
                 <next>
-                  <block type="controls_whileUntil" id="149" inline="false">
-                    <field name="MODE">WHILE</field>
-                    <value name="NUMBER">
-                      <block type="logic_compare" id="99" inline="true">
-                        <field name="OP">GT</field>
-                        <value name="A">
-                          <block type="sensor_object" id="115">
-                            <field name="OBJECT">REAR</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="math_number" id="122">
-                            <field name="NUM">20</field>
-                          </block>
-                        </value>
+                  <block type="movement_rightmotor" id="5" inline="true">
+                    <value name="MOVRIGHT">
+                      <block type="math_number" id="6">
+                        <field name="NUM">100</field>
                       </block>
                     </value>
-                    <statement name="DO">
-                      <block type="movement_rightmotor" id="5" inline="true">
-                        <value name="MOVRIGHT">
-                          <block type="math_number" id="6">
-                            <field name="NUM">100</field>
-                          </block>
-                        </value>
-                      </block>
-                    </statement>
+                    <next>
+                      <block type="oled_cleardisplay" id="21"></block>
+                    </next>
                   </block>
                 </next>
               </block>
-            </next>
+            </statement>
           </block>
         </next>
       </block>
