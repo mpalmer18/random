@@ -1,83 +1,13 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="movement_forward" id="1" x="69" y="-62">
+  <block type="movement_right" id="29" x="31" y="-366">
     <next>
-      <block type="controls_whileUntil" id="2" inline="false">
-        <field name="MODE">UNTIL</field>
-        <value name="NUMBER">
-          <block type="sensor_object" id="3">
-            <field name="OBJECT">RIGHTFRONT</field>
+      <block type="robot_delay" id="31" inline="true">
+        <value name="DELAY">
+          <block type="math_number" id="38">
+            <field name="NUM">1500</field>
           </block>
         </value>
-        <statement name="DO">
-          <block type="oled_linerect" id="4">
-            <field name="OBJECT">LINE</field>
-          </block>
-        </statement>
-        <next>
-          <block type="movement_reverse" id="5">
-            <next>
-              <block type="controls_whileUntil" id="6" inline="false">
-                <field name="MODE">WHILE</field>
-                <value name="NUMBER">
-                  <block type="logic_compare" id="7" inline="true">
-                    <field name="OP">GT</field>
-                    <value name="A">
-                      <block type="sensor_object" id="8">
-                        <field name="OBJECT">REAR</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="math_number" id="9">
-                        <field name="NUM">10</field>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-                <statement name="DO">
-                  <block type="oled_drawnumber" id="10" inline="true">
-                    <value name="NUMBER">
-                      <block type="sensor_object" id="11">
-                        <field name="OBJECT">REAR</field>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="movement_rightmotor" id="12" inline="true">
-                        <value name="MOVRIGHT">
-                          <block type="math_number" id="13">
-                            <field name="NUM">100</field>
-                          </block>
-                        </value>
-                        <next>
-                          <block type="oled_cleardisplay" id="14">
-                            <next>
-                              <block type="oled_setcursor" id="15" inline="true">
-                                <value name="STARTX">
-                                  <block type="math_number" id="16">
-                                    <field name="NUM">0</field>
-                                  </block>
-                                </value>
-                                <value name="STARTY">
-                                  <block type="math_number" id="17">
-                                    <field name="NUM">0</field>
-                                  </block>
-                                </value>
-                              </block>
-                            </next>
-                          </block>
-                        </next>
-                      </block>
-                    </next>
-                  </block>
-                </statement>
-                <next>
-                  <block type="controls_if" id="18" inline="false"></block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </next>
       </block>
     </next>
   </block>
-  <block type="movement_stop" id="19" x="69" y="365"></block>
 </xml>
